@@ -39,9 +39,11 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.learning_logs_entry" active-filter-id="" />
+    <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.auth_user" active-filter-id="" />
     <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.sqlite_sequence" active-filter-id="" />
     <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.auth_group" active-filter-id="" />
     <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.learning_logs_testxyu" active-filter-id="" />
+    <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.django_admin_log" active-filter-id="" />
     <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.django_session" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
