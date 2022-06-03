@@ -1,18 +1,21 @@
 from django.shortcuts import render, redirect
-from .models import Topic
+from django.contrib.auth.decorators import login_required
+from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
-# Create your views here.
+
 
 def index(request):
     """Домашняя страница приложения learning_logs"""
     return render(request, 'learning_logs/index.html')
 
+@login_required
 def topics(request):
     '''Выводит список тем'''
     topics = Topic.objects.order_by('date_added')
     context = {'topics': topics}
     return render(request, 'learning_logs/topics.html', context)
 
+@login_required
 def topic(request, topic_id):
     '''Выводит одну тему и все ее записи'''
     topic = Topic.objects.get(id=topic_id)
@@ -20,6 +23,7 @@ def topic(request, topic_id):
     context = {'topic':topic, 'entries':entries}
     return render(request, 'learning_logs/topic.html', context)
 
+@login_required
 def new_topic(request):
     '''Определяем новую тему'''
     if request.method != 'POST':
@@ -36,6 +40,7 @@ def new_topic(request):
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
 
+@login_required
 def new_entry(request, topic_id):
     '''Добавляет новую запись к конкретной теме'''
     topic = Topic.objects.get(id=topic_id)
@@ -54,3 +59,50 @@ def new_entry(request, topic_id):
     # Вывести пустую или недействительную форму.
     context = {'topic':topic, 'form':form}
     return render(request, 'learning_logs/new_entry.html', context)
+
+@login_required
+def edit_entry(request, entry_id):
+    '''Редактируем существующую запись'''
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+
+    if request.method != 'POST':
+        # Исходный запрос; форма заполнения данными текущей записи.
+        form = EntryForm(instance=entry)
+    else:
+        # Отправка данных POST; обработанные данные.
+        form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('learning_log:topic', topic_id=topic.id)
+
+    context = {'entry':entry, 'topic':topic, 'form':form}
+    return render(request, 'learning_logs/edit_entry.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

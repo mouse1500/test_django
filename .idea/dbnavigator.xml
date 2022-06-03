@@ -38,7 +38,11 @@
     <connection id="b13eb7b8-7d82-43e5-87e5-01feb8568084" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.learning_logs_entry" active-filter-id="" />
+    <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.learning_logs_entry" active-filter-id="72df0c73-27f1-4250-aebf-f713d4e1138b">
+      <filter id="72df0c73-27f1-4250-aebf-f713d4e1138b" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
     <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.auth_user" active-filter-id="" />
     <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.sqlite_sequence" active-filter-id="" />
     <filter-actions connection-id="b13eb7b8-7d82-43e5-87e5-01feb8568084" dataset="main.auth_group" active-filter-id="" />
