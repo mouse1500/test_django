@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Сторонние приложения
+    'bootstrap4',
     # Мои приложения
     'learning_logs',
     'users',

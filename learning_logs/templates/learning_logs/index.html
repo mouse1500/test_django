@@ -1,5 +1,13 @@
 {% extends "learning_logs/base.html" %}
 
 {% block content %}
-<p>Данный проект помогает мне погрузиться в изучение фреймворка Django.</p>
+    <div class="jumbotron">
+        <h1 class="display-3">Отслеживайте свое обучение.</h1>
+
+        <p class="lead">Заведите журнал обучения и ведите список тем, которые вы изучаете.
+            Всякий раз, когда вы узнаете что-то новое по теме, делайте запись, резюмируя то, что вы узнали.</p>
+
+        <a class="bth bth-lg btn-primary" href="{% url 'users:register' %}"
+           role="'button">Зарегистрироваться &raquo;</a>
+    </div>
 {% endblock content %}
